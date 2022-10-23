@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+    <hr>
+    <% resultado.atividades.rows.forEach(atividade => { %>
+        <!--Usando linhas de resultado e atividades-->
+        <div class="card">
+            <div class="card-header">
+                <h2><%= atividade.titulo %></h2>
+            </div>
+            <div class="card-body">
+                <a href="/<%= atividade.slug %>">Ler Artigos</a>
+            </div>
+        </div>
+        <br>
+    <% }) %>
+
+    <div class="row">
+        <div class="col col-12">
+            <% if(resultado.pagina > 2) { %>
+                <a class="botao" style="float:left; " href="/atividades/page/<%= resultado.pagina - 1 %>">Voltar</a>
+            <%} else if(resultado.pagina == 2) { %>
+                <a class="botao" style="float:left;" href="/admin/atividade">Voltar</a>
+            <% } %>
+
+            <% if(resultado.proximo) { %>
+                <a class="botao" style="float:right;" href="/atividades/page/<%= resultado.pagina + 1 %>">Próximo</a>
+            <% } %>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

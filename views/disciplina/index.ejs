@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+<body id="corpo-disciplina">
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header" id="titulo-disciplina">
+            Disciplinas
+        </div>
+        <hr>
+        <a id="botao-disc" class="btn btn-success" href="/admin/disciplina/new">Criar nova Disciplina</a>
+        <hr>
+        <br>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Titulo</td>
+                        <td>Slug</td>
+                        <td>Ações</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% disciplinas.forEach(disciplina => { %>
+                        <tr>
+                            <td><%= disciplina.id%></td>
+                            <td><%= disciplina.titulo%></td>
+                            <td><%= disciplina.slug%></td>
+                            <td>
+                                <a href="/disciplina/edit/<%= disciplina.id%>" class="btn btn-warning">Editar</a>
+                                <form method="POST" action="/disciplina/delete" style="display: inline;">
+                                    <input type="hidden" name="id" value="<%= disciplina.id %>">
+                                    <button class="btn btn-danger">Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<%- include('../partials/footer.ejs') %>

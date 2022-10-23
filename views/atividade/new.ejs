@@ -1,0 +1,53 @@
+<%- include('../partials/header.ejs') %>
+    <%- include('../partials/navbar.ejs') %>
+        <div class="container">
+            <hr>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Nova Atividade</h2>
+                </div>
+                <div class="card-body">
+                <form method="POST" action="/atividade/save">
+                    <label>Titulo da Atividade</label>
+                    <input type="text" name="titulo" class="form-control" placeholder="Nome da atividade"> <br>
+                    <textarea class="form-control" placeholder="Escreva a atividade aqui" name="texto" id="atividade"></textarea> <br>
+
+                    <label>Disciplinas</label>
+                    <select name="disciplina" class="form-control">
+                        <% disciplinas.forEach(disciplina => { %>
+                            <option value="<%= disciplina.id%>"><%= disciplina.titulo%></option>
+                        <%}) %>
+                    </select>
+                    <br>
+                    <button class="btn btn-success">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('../partials/footer.ejs') %>
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        language: 'pt-BR',
+        selector: '#atividade',
+        plugins: [
+                        'advlist', // Para criação de listas
+                        'autolink', // Quando tiver um link no meu texto já ficar azul
+                        'link', // Para criar links com botão
+                        'image', // para importar imagem
+                        'lists',  // Lista simples
+                        'print', // Impressão
+                        'preview', // Prever oque está escrevendo
+                        'searchreplace', // Pesquisar por palavra
+                        'hr', // Uma linha 
+                        'wordcount', // quantidade de palavra
+                        'fullscreen', // Deixar tela cheia
+                        'insertdatetime', // Inserir a data no texto
+                        'media', // Insirir midia videos 
+                        'save', // Salvar como artigo
+                        'table', // criar tabelas
+                        'paste', // Colar coisas
+                        'emoticons' // Para colocar Emojis
+        ]
+    })
+</script>

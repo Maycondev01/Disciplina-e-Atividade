@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') %>
+
+    <div class="container">
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h2> Edição de Disicplina </h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/disciplina/update" id="formulario">
+                    <label>Titulo</label>
+                    <input type="text" class="form-control" name="titulo" placeholder="Defina o título"
+                        value="<%= disciplina.titulo %>">
+                    <input type="hidden" name="id" value="<%= disciplina.id %>"> <br>
+                    <button class="btn btn-primary">Atualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>

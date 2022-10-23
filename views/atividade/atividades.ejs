@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+   <hr>
+   <div class="card">
+    <div class="card-header">
+        <h2><%= atividades.titulo %></h2>
+    </div>
+    <div class="card-body">
+        <%- atividades.titulo %>
+    </div>
+    <br>
+    <a href="/admin/atividade" class="btn btn-primary">Voltar</a>
+   </div>
+</div>
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs') %>
+
+    <div class="container">
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h2>Cadastro de Disciplina</h2>
+            </div>
+            <div class="card-body" id="formulario">
+                <form method="POST" action="/disciplina/save">
+                <label>Titulo</label>
+                <input type="text" class="form-control" name="titulo" placeholder="Defina titulo da disciplina"> <br>
+                <button class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>
