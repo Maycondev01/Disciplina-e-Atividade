@@ -3,3 +3,8 @@
 
 *Fazer as instalações corretamente de cada biblioteca utilizada no projeto.*
 
+## Fazer um Schema no MySQL com nome: "disciplina".
+
+## para sincronizar com todas as tabelas.
+### colocar em todos os Models.
+  Disciplina.sync({force: true})
