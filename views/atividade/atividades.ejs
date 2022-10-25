@@ -2,13 +2,14 @@
 <%- include('../partials/navbar.ejs') %>
 
 <div class="container">
+    <h1>Suas Atividades</h1>
    <hr>
    <div class="card">
     <div class="card-header">
         <h2><%= atividades.titulo %></h2>
     </div>
     <div class="card-body">
-        <%- atividades.titulo %>
+        <%- atividades.texto %>
     </div>
     <br>
     <a href="/admin/atividade" class="btn btn-primary">Voltar</a>
